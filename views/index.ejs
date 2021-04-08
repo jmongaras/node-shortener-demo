@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>URL Shortner Demo</title>
+</head>
+
+<body>
+  <h1>URL Shortner Demo</h1>
+  <form method="post" action="/item/add">
+    <label for="longurl">Enter Long URL</label>
+    <input type="text" name="longurl">
+    <input type="submit" value="Generate & Save">
+  </form>
+  <h4>Shorter URL List:</h4>
+  <ul>
+    <table border="1" cellspacing="1" cellpadding='1'>
+      <tr><th>Full URL</th><th>Short URL</th></tr>
+    <% items.forEach(function(item) { %>
+      <tr><td>
+        <%= item.longurl %></td>
+          <td> srt.io/<%= item.shorturl %></td>
+    </tr>
+      <% }); %>
+
+    </table>
+  </ul>
+</body>
+
+</html>
